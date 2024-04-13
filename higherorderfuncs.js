@@ -1,6 +1,8 @@
 function returnSomething(){
 
+return function(){ 
 return "Something";
+}
 }
 
 function higherOrder(func){
@@ -9,4 +11,7 @@ return func();
 
 }
 
-console.log(higherOrder(returnSomething));
+let a=returnSomething();
+console.log(a());
+
+//console.log(higherOrder(returnSomething()()));
