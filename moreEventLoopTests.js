@@ -1,21 +1,21 @@
-console.log('A');
+console.log('1');
 
 setTimeout(function() {
-    console.log('B');
-}, 1000);
+    console.log('2');
+    Promise.resolve().then(function() {
+        console.log('3');
+    });
+}, 500);
 
 setTimeout(function() {
-    console.log('C');
-}, 0);
+    console.log('4');
+}, 200);
 
 new Promise(function(resolve, reject) {
-    console.log('D');
+    console.log('5');
     resolve();
 }).then(function() {
-    console.log('E');
-}).finally(function() {
-    console.log('F');
+    console.log('6');
 });
 
-console.log('G');
-
+console.log('7');
